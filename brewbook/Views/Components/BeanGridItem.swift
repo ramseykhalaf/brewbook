@@ -2,6 +2,7 @@ import SwiftUI
 
 struct BeanGridItem: View {
     let bean: CoffeeBean
+    @State private var showingRecipeSheet = false
     
     var body: some View {
         NavigationLink(destination: BeanDetailView(bean: bean)) {
@@ -36,6 +37,20 @@ struct BeanGridItem: View {
                             .font(.caption2)
                     }
                     .foregroundColor(bean.freshness.color)
+                    
+                    Button {
+                        showingRecipeSheet = true
+                    } label: {
+                        Text("Brew")
+                            .font(.caption)
+                            .fontWeight(.medium)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 4)
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(6)
+                    }
+                    .buttonStyle(PlainButtonStyle())
                 }
                 .padding(.horizontal, 8)
                 .padding(.bottom, 8)
@@ -48,5 +63,8 @@ struct BeanGridItem: View {
             .shadow(radius: 2)
         }
         .buttonStyle(PlainButtonStyle())
+        .sheet(isPresented: $showingRecipeSheet) {
+            AddRecipeView(bean: bean)
+        }
     }
 }
