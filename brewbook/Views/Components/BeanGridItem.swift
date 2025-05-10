@@ -41,14 +41,17 @@ struct BeanGridItem: View {
                     Button {
                         showingRecipeSheet = true
                     } label: {
-                        Text("Brew")
-                            .font(.caption)
-                            .fontWeight(.medium)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 4)
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(6)
+                        HStack {
+                            Image(systemName: "cup.and.saucer.fill")
+                            Text("Brew")
+                        }
+                        .font(.callout)
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 8)
+                        .background(Color.brown)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
                     }
                     .buttonStyle(PlainButtonStyle())
                 }

@@ -6,6 +6,7 @@ final class CoffeeRecipe {
     var dose: Double
     var createdAt: Date
     var bean: CoffeeBean
+    @Relationship(deleteRule: .cascade) var attributes: [RecipeAttribute] = []
     
     init(dose: Double, bean: CoffeeBean) {
         self.dose = dose

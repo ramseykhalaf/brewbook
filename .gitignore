@@ -13,7 +13,7 @@ xcuserdata/
 *.perspectivev3
 !default.perspectivev3
 
-## Xcode 8 and earlier
+## Xcode 8 and earliergit 
 *.xcscmblueprint
 *.xccheckout
 

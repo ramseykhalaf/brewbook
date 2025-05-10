@@ -7,6 +7,6 @@ struct CoffeeTrackerApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: [CoffeeBean.self, CoffeeRecipe.self])
+        .modelContainer(for: [CoffeeBean.self, CoffeeRecipe.self, RecipeAttribute.self])
     }
 }
